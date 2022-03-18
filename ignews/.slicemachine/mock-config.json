@@ -1,0 +1,36 @@
+{
+  "slices": {
+    "MyFirstSlice": {
+      "default": {
+        "items": {
+          "imageExample": {
+            "content": "https://images.unsplash.com/photo-1490535004195-099bc723fa1f"
+          },
+          "richTextExample": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 1
+            }
+          }
+        },
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "_cts": {
+    "post": {}
+  }
+}
