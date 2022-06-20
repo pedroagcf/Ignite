@@ -10,7 +10,7 @@ import fetch from 'node-fetch'
 interface HomeProps {
   product: {
     priceId: string
-    amount: number
+    amount: string
   }
 }
 
@@ -35,7 +35,7 @@ export default function Home({ product }: HomeProps) {
             Get Access to all the publications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
         <img src='/images/avatar.svg' alt='girl coding' />
       </main>
@@ -56,21 +56,21 @@ export const getStaticProps: GetStaticProps = async () => {
     }).format(price.unit_amount / 100),
   }
 
-  const routes = [
-    // Define routes for your Custom Types.
-    {
-      type: 'post', // Documents of type "page"
-      path: '/posts', // will have this URL structure.
-    },
-  ]
+  // const routes = [
+  //   // Define routes for your Custom Types.
+  //   {
+  //     type: 'post', // Documents of type "page"
+  //     path: '/posts', // will have this URL structure.
+  //   },
+  // ]
 
-  const accessToken = process.env.PRISMIC_ACESS_TOKEN
+  // const accessToken = process.env.PRISMIC_ACESS_TOKEN
 
-  const repoName = 'IgnewsByPedro'
-  const endpoint = prismic.getEndpoint(repoName)
-  const client = prismic.createClient(endpoint, { routes, fetch, accessToken })
+  // const repoName = 'IgnewsByPedro'
+  // const endpoint = prismic.getEndpoint(repoName)
+  // const client = prismic.createClient(endpoint, { routes, fetch, accessToken })
 
-  const page = await client.getAllByType('post')
+  // const page = await client.getAllByType('post')
 
   return {
     props: {
